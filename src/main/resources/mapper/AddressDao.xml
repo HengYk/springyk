@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.xidian.ictt.springyk.dao.AddressDao">
+
+    <select id="queryAddressByArray" resultType="Address">
+        select * from j_position
+    </select>
+
+    <select id="queryAddressBySql" parameterType="map" resultType="Address">
+        select * from j_position limit #{currIndex}, #{pageSize}
+    </select>
+
+    <select id="queryAddressByPage" parameterType="map" resultType="Address">
+        select * from j_position
+    </select>
+
+    <select id="queryAddressByRowBounds" resultType="Address">
+        select * from j_position
+    </select>
+</mapper>
